@@ -434,44 +434,54 @@ em { font-style: italic; color: var(--saffron); }
 /* =========================================
    IMAGE PLACEHOLDERS
    ========================================= */
-.img-placeholder {
-  background: linear-gradient(135deg, var(--ivory-dark) 0%, #e8e0d4 100%);
-  border: 1px dashed var(--gold);
+/* Section images */
+.bio-portrait img,
+.bio-image img,
+.about-image img,
+.teaching-image img,
+.initiative-card-image img,
+.initiative-sub-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+.bio-portrait img { border-radius: var(--radius-lg); }
+img.award-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+.video-thumbnail img.video-thumb-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 0;
+}
+/* Book cover placeholder (no image available) */
+.book-cover-placeholder {
+  background: linear-gradient(135deg, var(--navy) 0%, #2a3a5c 100%);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
+  min-height: 240px;
   width: 100%;
-  position: relative;
-  overflow: hidden;
+  padding: 1.5rem;
+  text-align: center;
 }
-.img-placeholder::before {
-  content: '📷';
-  font-size: 2rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -60%);
-  opacity: 0.4;
+.book-cover-placeholder .book-title-overlay {
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
-.img-placeholder span {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  font-family: monospace;
-  padding: 0.5rem 1rem;
-  background: rgba(255,255,255,0.6);
-  border-radius: 3px;
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-.portrait-placeholder { min-height: 480px; border-radius: var(--radius-lg); }
-.award-img { min-height: 180px; border-radius: var(--radius); }
-.video-placeholder { min-height: 220px; border-radius: var(--radius); }
-.book-cover { min-height: 240px; border-radius: var(--radius); }
 
 /* =========================================
    HOME PAGE SECTIONS
@@ -867,7 +877,7 @@ em { font-style: italic; color: var(--saffron); }
 }
 .initiative-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 .initiative-card-image { overflow: hidden; }
-.initiative-card-image .img-placeholder { min-height: 200px; border-radius: 0; border: none; }
+.initiative-card-image img { width: 100%; height: auto; display: block; object-fit: cover; }
 .initiative-card-body { padding: 1.5rem; }
 .initiative-tag {
   display: inline-block;
@@ -925,7 +935,7 @@ em { font-style: italic; color: var(--saffron); }
   position: relative;
   overflow: hidden;
 }
-.video-thumbnail .img-placeholder { min-height: 200px; border-radius: 0; border: none; }
+.video-thumbnail img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .play-button {
   position: absolute;
   top: 50%;

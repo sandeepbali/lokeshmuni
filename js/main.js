@@ -84,7 +84,7 @@
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
   /* =========================================
-     4. HERO PARALLAX (desktop only)
+     5. HERO PARALLAX (desktop only)
      ========================================= */
   const heroBg = document.querySelector('.hero .hero-bg');
   if (heroBg && window.matchMedia('(min-width: 769px)').matches) {
@@ -98,7 +98,7 @@
   }
 
   /* =========================================
-     5. COUNTER ANIMATION
+     6. COUNTER ANIMATION
      ========================================= */
   const counters = document.querySelectorAll('.impact-number[data-target]');
   if (counters.length) {
@@ -138,7 +138,7 @@
   }
 
   /* =========================================
-     6. ACCORDION (Events page)
+     7. ACCORDION (Events page)
      ========================================= */
   document.querySelectorAll('.accordion-header').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -163,7 +163,7 @@
   });
 
   /* =========================================
-     7. SMOOTH SCROLL (anchor links)
+     8. SMOOTH SCROLL (anchor links)
      ========================================= */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -179,7 +179,7 @@
   });
 
   /* =========================================
-     8. ACTIVE NAV HIGHLIGHT (current page)
+     9. ACTIVE NAV HIGHLIGHT (current page)
      ========================================= */
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(link => {
